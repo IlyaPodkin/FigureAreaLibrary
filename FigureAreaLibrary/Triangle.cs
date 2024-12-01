@@ -1,10 +1,10 @@
 ﻿namespace FigureAreaLibrary
 {
-    public class Triangle : IShape
+    public sealed class Triangle : IShape
     {
-        public double SideA { get; set; }
-        public double SideB { get; set; }
-        public double SideC { get; set; }
+        private double SideA { get; }
+        private double SideB { get; }
+        private double SideC { get; }
 
         public Triangle(double sideA, double sideB, double sideC)
         {
@@ -25,7 +25,7 @@
         public bool IsRightTriangle()
         {
             ValidateSides();
-            double[] sides = new double[] { SideA, SideB, SideC };
+            double[] sides = [SideA, SideB, SideC];
             Array.Sort(sides);
             return Math.Pow(sides[2], 2) == Math.Pow(sides[1], 2) + Math.Pow(sides[0], 2);
         }

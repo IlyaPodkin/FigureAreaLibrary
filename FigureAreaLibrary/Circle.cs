@@ -1,8 +1,8 @@
 ﻿namespace FigureAreaLibrary
 {
-    public class Circle : IShape
+    public sealed class Circle : IShape
     {
-        public double Radius { get; set; }
+        private double Radius { get; }
 
         public Circle(double radius) 
         {
